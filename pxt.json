@@ -2,8 +2,7 @@
     "name": "runkit",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.blocks",
