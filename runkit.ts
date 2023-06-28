@@ -7,7 +7,7 @@
 namespace runkit {
 
     let speedRatio = 50
-    let speedMax = 512
+    let speedMax = 1023
 
     enum Motors {
         Left = 0,
@@ -107,7 +107,7 @@ namespace runkit {
     //% block="Set max speed to $speed"
     //% speed.min=0 speed.max=1023 speed.defl=500
     //% subcategory="Settings"
-    export function setMaxSpeed(speed: number): void {
+    function setMaxSpeed(speed: number): void {
         if (speed < 0) {
             speedMax = 0
         } else if (speed > 1023) {
