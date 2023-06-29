@@ -81,9 +81,12 @@ namespace runkit {
 
     //% blockId=stop
     //% weight=60
-    //% block="Stop"
-    export function stop(): void {
+    //% block="Stop for $duration"
+    //% duration.min=0 duration.max=1000000 duration.defl=1000
+    //% duration.shadow="timePicker"
+    export function stop(duration: number): void {
         motorOff(Motors.Both)
+        basic.pause(duration)
     }
 
 
