@@ -113,6 +113,10 @@ namespace runkit {
         motorOff(Motors.Both)
     }
 
+    /**
+        Rotate counter-clockwise for duration [msec].
+        @param duration time [msec] rotate counter-clockwise
+    **/
     //% blockId=rotate_ccw_for
     //% weight=70
     //% block="Rotate counter-clockwise for $duration"
@@ -125,6 +129,10 @@ namespace runkit {
         motorOff(Motors.Both)
     }
 
+    /**
+        Stop for duration [msec].
+        @param duration time [msec] stop
+    **/
     //% blockId=stop_for
     //% weight=60
     //% block="Stop for $duration"
@@ -137,6 +145,10 @@ namespace runkit {
 
 
 
+    /**
+        Set speed ratio.
+        @param speed ratio
+    **/
     //% blockId=set_speed_ratio
     //% weight=100
     //% block="Set speed ratio to $speed"

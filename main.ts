@@ -1,4 +1,4 @@
 basic.forever(function () {
-    runkit.moveForward()
+    runkit.moveForwardFor(1000)
     basic.pause(1000)
 })
