@@ -22,15 +22,61 @@ namespace runkit {
 
 
     /**
+        Move forward.
+    **/
+    //% blockId=move_forward
+    //% weight=200
+    //% block="Move forward"
+    export function moveForward(): void {
+        motorOn(Motors.Both, Dir.Forward, speedRatio)
+    }
+
+    /**
+        Move backward.
+    **/
+    //% blockId=move_backward
+    //% weight=190
+    //% block="Move backward"
+    export function moveBackward(): void {
+        motorOn(Motors.Both, Dir.Backward, speedRatio)
+    }
+
+    /**
+        Rotate clockwise.
+    **/
+    //% blockId=rotate_cw
+    //% weight=180
+    //% block="Rotate clockwise"
+    export function rotateCw(): void {
+        motorOn(Motors.Left, Dir.Forward, speedRatio)
+        motorOn(Motors.Right, Dir.Backward, speedRatio)
+    }
+
+    //% blockId=rotate_ccw
+    //% weight=170
+    //% block="Rotate counter-clockwise"
+    export function rotateCcw(): void {
+        motorOn(Motors.Left, Dir.Backward, speedRatio)
+        motorOn(Motors.Right, Dir.Forward, speedRatio)
+    }
+
+    //% blockId=stop
+    //% weight=160
+    //% block="Stop"
+    export function stop(): void {
+        motorOff(Motors.Both)
+    }
+
+    /**
         Move forward for duration [msec].
         @param duration time [msec] move forward
     **/
-    //% blockId=move_forward
+    //% blockId=move_forward_for
     //% weight=100
     //% block="Move forward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
-    export function moveForward(duration: number): void {
+    export function moveForwardFor(duration: number): void {
         motorOn(Motors.Both, Dir.Forward, speedRatio)
         basic.pause(duration)
         motorOff(Motors.Both)
@@ -40,12 +86,12 @@ namespace runkit {
         Move backward for duration [msec].
         @param duration time [msec] move forward
     **/
-    //% blockId=move_backward
+    //% blockId=move_backward_for
     //% weight=90
     //% block="Move backward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
-    export function moveBackward(duration: number): void {
+    export function moveBackwardFor(duration: number): void {
         motorOn(Motors.Both, Dir.Backward, speedRatio)
         basic.pause(duration)
         motorOff(Motors.Both)
@@ -55,36 +101,36 @@ namespace runkit {
         Rotate clockwise for duration [msec].
         @param duration time [msec] rotate clockwise
     **/
-    //% blockId=rotate_cw
+    //% blockId=rotate_cw_for
     //% weight=80
     //% block="Rotate clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
-    export function rotateCw(duration: number): void {
+    export function rotateCwFor(duration: number): void {
         motorOn(Motors.Left, Dir.Forward, speedRatio)
         motorOn(Motors.Right, Dir.Backward, speedRatio)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
 
-    //% blockId=rotate_ccw
+    //% blockId=rotate_ccw_for
     //% weight=70
     //% block="Rotate counter-clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
-    export function rotateCcw(duration: number): void {
+    export function rotateCcwFor(duration: number): void {
         motorOn(Motors.Left, Dir.Backward, speedRatio)
         motorOn(Motors.Right, Dir.Forward, speedRatio)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
 
-    //% blockId=stop
+    //% blockId=stop_for
     //% weight=60
     //% block="Stop for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
-    export function stop(duration: number): void {
+    export function stopFor(duration: number): void {
         motorOff(Motors.Both)
         basic.pause(duration)
     }
