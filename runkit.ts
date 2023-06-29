@@ -27,7 +27,7 @@ namespace runkit {
     //% blockId=move_forward
     //% weight=200
     //% block="Move forward"
-    export function moveForward(): void {
+    function moveForward(): void {
         motorOn(Motors.Both, Dir.Forward, speedRatio)
     }
 
@@ -37,7 +37,7 @@ namespace runkit {
     //% blockId=move_backward
     //% weight=190
     //% block="Move backward"
-    export function moveBackward(): void {
+    function moveBackward(): void {
         motorOn(Motors.Both, Dir.Backward, speedRatio)
     }
 
@@ -47,7 +47,7 @@ namespace runkit {
     //% blockId=rotate_cw
     //% weight=180
     //% block="Rotate clockwise"
-    export function rotateCw(): void {
+    function rotateCw(): void {
         motorOn(Motors.Left, Dir.Forward, speedRatio)
         motorOn(Motors.Right, Dir.Backward, speedRatio)
     }
@@ -55,7 +55,7 @@ namespace runkit {
     //% blockId=rotate_ccw
     //% weight=170
     //% block="Rotate counter-clockwise"
-    export function rotateCcw(): void {
+    function rotateCcw(): void {
         motorOn(Motors.Left, Dir.Backward, speedRatio)
         motorOn(Motors.Right, Dir.Forward, speedRatio)
     }
@@ -63,7 +63,7 @@ namespace runkit {
     //% blockId=stop
     //% weight=160
     //% block="Stop"
-    export function stop(): void {
+    function stop(): void {
         motorOff(Motors.Both)
     }
 
@@ -138,7 +138,7 @@ namespace runkit {
 
 
     //% blockId=set_speed_ratio
-    //% weight=30
+    //% weight=100
     //% block="Set speed ratio to $speed"
     //% speed.min=0 speed.max=100 speed.defl=50
     //% subcategory="Settings"
@@ -152,7 +152,7 @@ namespace runkit {
     }
 
     //% blockId=set_max_speed
-    //% weight=20
+    //% weight=90
     //% block="Set max speed to $speed"
     //% speed.min=0 speed.max=1023 speed.defl=500
     //% subcategory="Settings"
