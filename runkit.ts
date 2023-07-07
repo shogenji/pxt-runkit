@@ -168,6 +168,11 @@ namespace runkit {
     /**
     Set the direction and speed of motors.
     **/
+    //% blockId=motor_on
+    //% weight=100
+    //% block="Motor $motors $direction at speed $speed"
+    //% speed.min=0 speed.max=100 speed.defl=50
+    //% subcategory="Settings"
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
         /* convert 0-100 to 0-1023 by a simple multiple by (speedMax / 100) */
         let outputVal = Math.round(speed * speedMax / 100)
