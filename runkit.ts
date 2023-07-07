@@ -8,7 +8,7 @@ namespace runkit {
 
     let speedRatio = 50
     let speedMax = 1023
-    let currentSpeed = Math.round(speedMax * speedRatio / 100)
+    let currentSpeed = 512
  
     enum Motors {
         Left = 0,
@@ -165,23 +165,6 @@ namespace runkit {
         currentSpeed = Math.round(speedMax * speedRatio / 100)
     }
 
-    //% blockId=set_maximum_speed
-    //% weight=90
-    //% block="Set maximum speed to $speed"
-    //% speed.min=0 speed.max=1023 speed.defl=500
-    //% subcategory="Settings"
-    function setMaxSpeed(speed: number): void {
-        if (speed < 0) {
-            speedMax = 0
-        } else if (speed > 1023) {
-            speedMax = 1023
-        } else {
-            speedMax = speed
-        }
-        currentSpeed = Math.round(speedMax * speedRatio / 100)
-    }
-
-
     /**
     Set the direction and speed of motors.
     **/
@@ -218,11 +201,6 @@ namespace runkit {
     /**
     * Stop motors.
     **/
-
-    //% weight=20
-    //% blockId=motor_off
-    //% block="motor |%motors stop"
-    //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorOff(motors: Motors): void {
         switch (motors) {
             case Motors.Left:
