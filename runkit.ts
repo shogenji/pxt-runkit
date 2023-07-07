@@ -154,7 +154,6 @@ namespace runkit {
     //% weight=100
     //% block="Set speed ratio to $speed"
     //% speed.min=0 speed.max=100 speed.defl=50
-    //% subcategory="Settings"
     export function setSpeedRatio(speed: number): void {
         if (speed < 0) {
             speed = 0
@@ -173,8 +172,8 @@ namespace runkit {
     //% block="Motor $motors $direction at speed $speed"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
-    //% speed.min=0 speed.max=100 speed.defl=50
-    //% subcategory="Settings"
+    //% speed.min=0 speed.max=1023 speed.defl=512
+    //% advanced=true
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
         switch (motors) {
             case Motors.Left:
@@ -203,10 +202,9 @@ namespace runkit {
         Stop motors.
     **/
     //% blockId=motor_off
-    //% weight=100
+    //% weight=90
     //% block="Motor $motors stop"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
-    //% subcategory="Settings"
     //% advanced=true
     export function motorOff(motors: Motors): void {
         switch (motors) {
