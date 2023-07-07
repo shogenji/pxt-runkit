@@ -202,6 +202,12 @@ namespace runkit {
     /**
         Stop motors.
     **/
+    //% blockId=motor_off
+    //% weight=100
+    //% block="Motor $motors stop"
+    //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
+    //% subcategory="Settings"
+    //% advanced=true
     export function motorOff(motors: Motors): void {
         switch (motors) {
             case Motors.Left:
