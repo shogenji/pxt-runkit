@@ -8,7 +8,8 @@ namespace runkit {
 
     let speedRatio = 50
     let speedMax = 1023
-
+    let currentSpeed = Math.round(speedMax * speedRatio / 100)
+ 
     enum Motors {
         Left = 0,
         Right = 1,
@@ -28,7 +29,7 @@ namespace runkit {
     //% weight=200
     //% block="Move forward"
     function moveForward(): void {
-        motorOn(Motors.Both, Dir.Forward, speedRatio)
+        motorOn(Motors.Both, Dir.Forward, currentSpeed)
     }
 
     /**
@@ -38,7 +39,7 @@ namespace runkit {
     //% weight=190
     //% block="Move backward"
     function moveBackward(): void {
-        motorOn(Motors.Both, Dir.Backward, speedRatio)
+        motorOn(Motors.Both, Dir.Backward, currentSpeed)
     }
 
     /**
@@ -48,16 +49,16 @@ namespace runkit {
     //% weight=180
     //% block="Rotate clockwise"
     function rotateCw(): void {
-        motorOn(Motors.Left, Dir.Forward, speedRatio)
-        motorOn(Motors.Right, Dir.Backward, speedRatio)
+        motorOn(Motors.Left, Dir.Forward, currentSpeed)
+        motorOn(Motors.Right, Dir.Backward, currentSpeed)
     }
 
     //% blockId=rotate_ccw
     //% weight=170
     //% block="Rotate counter-clockwise"
     function rotateCcw(): void {
-        motorOn(Motors.Left, Dir.Backward, speedRatio)
-        motorOn(Motors.Right, Dir.Forward, speedRatio)
+        motorOn(Motors.Left, Dir.Backward, currentSpeed)
+        motorOn(Motors.Right, Dir.Forward, currentSpeed)
     }
 
     //% blockId=stop
@@ -77,7 +78,7 @@ namespace runkit {
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
     export function moveForwardFor(duration: number): void {
-        motorOn(Motors.Both, Dir.Forward, speedRatio)
+        motorOn(Motors.Both, Dir.Forward, currentSpeed)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
@@ -92,7 +93,7 @@ namespace runkit {
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
     export function moveBackwardFor(duration: number): void {
-        motorOn(Motors.Both, Dir.Backward, speedRatio)
+        motorOn(Motors.Both, Dir.Backward, currentSpeed)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
@@ -107,8 +108,8 @@ namespace runkit {
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
     export function rotateCwFor(duration: number): void {
-        motorOn(Motors.Left, Dir.Forward, speedRatio)
-        motorOn(Motors.Right, Dir.Backward, speedRatio)
+        motorOn(Motors.Left, Dir.Forward, currentSpeed)
+        motorOn(Motors.Right, Dir.Backward, currentSpeed)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
@@ -123,8 +124,8 @@ namespace runkit {
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
     export function rotateCcwFor(duration: number): void {
-        motorOn(Motors.Left, Dir.Backward, speedRatio)
-        motorOn(Motors.Right, Dir.Forward, speedRatio)
+        motorOn(Motors.Left, Dir.Backward, currentSpeed)
+        motorOn(Motors.Right, Dir.Forward, currentSpeed)
         basic.pause(duration)
         motorOff(Motors.Both)
     }
@@ -161,11 +162,12 @@ namespace runkit {
             speed = 100
         }
         speedRatio = (speedMax * speed) / 100
+        currentSpeed = Math.round(speedMax * speedRatio / 100)
     }
 
-    //% blockId=set_max_speed
+    //% blockId=set_maximum_speed
     //% weight=90
-    //% block="Set max speed to $speed"
+    //% block="Set maximum speed to $speed"
     //% speed.min=0 speed.max=1023 speed.defl=500
     //% subcategory="Settings"
     function setMaxSpeed(speed: number): void {
@@ -176,15 +178,13 @@ namespace runkit {
         } else {
             speedMax = speed
         }
+        currentSpeed = Math.round(speedMax * speedRatio / 100)
     }
 
 
     /**
-     * Set the direction and speed of motors.
-     */
-    //% blockId=motor_on
-    //% block="Drive $motors $direction at speed $speed"
-    //% speed.min=0 speed.max=1023
+    Set the direction and speed of motors.
+    **/
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
         /* convert 0-100 to 0-1023 by a simple multiple by (speedMax / 100) */
         let outputVal = Math.round(speed * speedMax / 100)
