@@ -171,6 +171,9 @@ namespace runkit {
     //% blockId=motor_on
     //% weight=100
     //% block="Motor $motors $direction at speed $speed"
+    //% motors.fieldEditor="gridpicker"
+    //% motors.fieldOptions.width=220
+    //% motors.fieldOptions.columns=2
     //% speed.min=0 speed.max=100 speed.defl=50
     //% subcategory="Settings"
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
