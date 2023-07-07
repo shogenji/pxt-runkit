@@ -171,7 +171,6 @@ namespace runkit {
     //% blockId=motor_on
     //% weight=100
     //% block="Motor $motors $direction at speed $speed"
-    //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
     //% speed.min=0 speed.max=100 speed.defl=50
     //% subcategory="Settings"
