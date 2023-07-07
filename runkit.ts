@@ -180,21 +180,19 @@ namespace runkit {
 
 
     /**
-     * Set the direction and speed of motor.
+     * Set the direction and speed of motors.
      */
     //% blockId=motor_on
-    //% block="Drive $index $direction at speed $speed"
+    //% block="Drive $motors $direction at speed $speed"
     //% speed.min=0 speed.max=1023
-    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
-    //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
-    export function motorOn(index: Motors, direction: Dir, speed: number): void {
+    export function motorOn(motors: Motors, direction: Dir, speed: number): void {
         /* convert 0-100 to 0-1023 by a simple multiple by (speedMax / 100) */
         let outputVal = Math.round(speed * speedMax / 100)
         if (outputVal > speedMax) {
             outputVal = speedMax
         }
 
-        switch (index) {
+        switch (motors) {
             case Motors.Left:
                 pins.digitalWritePin(DigitalPin.P13, direction)
                 pins.digitalWritePin(DigitalPin.P14, outputVal)
@@ -218,8 +216,8 @@ namespace runkit {
     }
 
     /**
-         * Stop the Maqueen motor.
-         */
+    * Stop motors.
+    **/
 
     //% weight=20
     //% blockId=motor_off
