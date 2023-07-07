@@ -23,52 +23,6 @@ namespace runkit {
 
 
     /**
-        Move forward.
-    **/
-    //% blockId=move_forward
-    //% weight=200
-    //% block="Move forward"
-    function moveForward(): void {
-        motorOn(Motors.Both, Dir.Forward, currentSpeed)
-    }
-
-    /**
-        Move backward.
-    **/
-    //% blockId=move_backward
-    //% weight=190
-    //% block="Move backward"
-    function moveBackward(): void {
-        motorOn(Motors.Both, Dir.Backward, currentSpeed)
-    }
-
-    /**
-        Rotate clockwise.
-    **/
-    //% blockId=rotate_cw
-    //% weight=180
-    //% block="Rotate clockwise"
-    function rotateCw(): void {
-        motorOn(Motors.Left, Dir.Forward, currentSpeed)
-        motorOn(Motors.Right, Dir.Backward, currentSpeed)
-    }
-
-    //% blockId=rotate_ccw
-    //% weight=170
-    //% block="Rotate counter-clockwise"
-    function rotateCcw(): void {
-        motorOn(Motors.Left, Dir.Backward, currentSpeed)
-        motorOn(Motors.Right, Dir.Forward, currentSpeed)
-    }
-
-    //% blockId=stop
-    //% weight=160
-    //% block="Stop"
-    function stop(): void {
-        motorOff(Motors.Both)
-    }
-
-    /**
         Move forward for duration [msec].
         @param duration time [msec] move forward
     **/
@@ -82,6 +36,7 @@ namespace runkit {
         basic.pause(duration)
         motorOff(Motors.Both)
     }
+
 
     /**
         Move backward for duration [msec].
@@ -97,6 +52,7 @@ namespace runkit {
         basic.pause(duration)
         motorOff(Motors.Both)
     }
+
 
     /**
         Rotate clockwise for duration [msec].
@@ -114,6 +70,7 @@ namespace runkit {
         motorOff(Motors.Both)
     }
 
+
     /**
         Rotate counter-clockwise for duration [msec].
         @param duration time [msec] rotate counter-clockwise
@@ -130,6 +87,7 @@ namespace runkit {
         motorOff(Motors.Both)
     }
 
+
     /**
         Stop for duration [msec].
         @param duration time [msec] stop
@@ -145,13 +103,12 @@ namespace runkit {
     }
 
 
-
     /**
         Set speed ratio.
         @param speed ratio
     **/
     //% blockId=set_speed_ratio
-    //% weight=100
+    //% weight=30
     //% block="Set speed ratio to $speed"
     //% speed.min=0 speed.max=100 speed.defl=50
     export function setSpeedRatio(speed: number): void {
@@ -163,6 +120,7 @@ namespace runkit {
         speedRatio = (speedMax * speed) / 100
         currentSpeed = Math.round(speedMax * speedRatio / 100)
     }
+
 
     /**
         Set the direction and speed of motors.
@@ -197,6 +155,7 @@ namespace runkit {
             // Stop - something has gone wrong
         }
     }
+
 
     /**
         Stop motors.
