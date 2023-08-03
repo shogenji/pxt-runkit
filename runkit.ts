@@ -131,6 +131,9 @@ namespace runkit {
     //% speed.min=0 speed.max=1023 speed.defl=512
     //% advanced=true
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+
         switch (motors) {
             case Motors.Left:
                 pins.digitalWritePin(DigitalPin.P13, direction)
