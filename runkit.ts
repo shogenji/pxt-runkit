@@ -27,8 +27,8 @@ namespace runkit {
 
 
     /**
-        Move forward for duration [msec].
-        @param duration time [msec] move forward
+        Move forward for duration [ms].
+        @param duration time [ms] move forward
     **/
     //% blockId=move_forward_for
     //% weight=100
@@ -43,8 +43,8 @@ namespace runkit {
 
 
     /**
-        Move backward for duration [msec].
-        @param duration time [msec] move forward
+        Move backward for duration [ms].
+        @param duration time [ms] move forward
     **/
     //% blockId=move_backward_for
     //% weight=90
@@ -59,8 +59,8 @@ namespace runkit {
 
 
     /**
-        Rotate clockwise for duration [msec].
-        @param duration time [msec] rotate clockwise
+        Rotate clockwise for duration [ms].
+        @param duration time [ms] rotate clockwise
     **/
     //% blockId=rotate_cw_for
     //% weight=80
@@ -76,8 +76,8 @@ namespace runkit {
 
 
     /**
-        Rotate counter-clockwise for duration [msec].
-        @param duration time [msec] rotate counter-clockwise
+        Rotate counter-clockwise for duration [ms].
+        @param duration time [ms] rotate counter-clockwise
     **/
     //% blockId=rotate_ccw_for
     //% weight=70
@@ -93,8 +93,8 @@ namespace runkit {
 
 
     /**
-        Stop for duration [msec].
-        @param duration time [msec] stop
+        Stop for duration [ms].
+        @param duration time [ms] stop
     **/
     //% blockId=stop_for
     //% weight=60
@@ -108,20 +108,17 @@ namespace runkit {
 
 
     /**
-        Set speed ratio.
-        @param speed ratio
+        Set speed.
+        @param speed
     **/
-    //% blockId=set_speed_ratio
+    //% blockId=set_speed
     //% weight=30
-    //% block="Set speed ratio to $speed"
-    //% speed.min=0 speed.max=100 speed.defl=50
+    //% block="Set speed to $speed"
+    //% speed.min=0 speed.max=1023 speed.defl=50
     export function setSpeedRatio(speed: number): void {
-        if (speed < 0) {
-            speed = 0
-        } else if (speed > 100) {
-            speed = 100
-        }
-        currentSpeed = Math.round(speedMax * speed / 100)
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+        currentSpeed = speed
     }
 
 
