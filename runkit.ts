@@ -6,7 +6,6 @@
 //% block="Run Kit"
 namespace runkit {
 
-    let speedRatio = 50
     let speedMax = 1023
     let currentSpeed = 512
  
@@ -117,8 +116,7 @@ namespace runkit {
         } else if (speed > 100) {
             speed = 100
         }
-        speedRatio = (speedMax * speed) / 100
-        currentSpeed = Math.round(speedMax * speedRatio / 100)
+        currentSpeed = Math.round(speedMax * speed / 100)
     }
 
 
@@ -127,7 +125,7 @@ namespace runkit {
     **/
     //% blockId=motor_on
     //% weight=100
-    //% block="Motor $motors $direction at speed $speed"
+    //% block="Motor $motors | $direction | at speed $speed"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
     //% speed.min=0 speed.max=1023 speed.defl=512
