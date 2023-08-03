@@ -19,9 +19,9 @@ namespace runkit {
     }
 
     export enum Dir {
-        //% blockId="dir_forward" block="Forward"
+        //% blockId="dir_forward" block="forward"
         Forward = 0,
-        //% blockId="dir_backward" block="Backward"
+        //% blockId="dir_backward" block="backward"
         Backward = 1
     }
 
@@ -114,7 +114,7 @@ namespace runkit {
     //% blockId=set_speed
     //% weight=30
     //% block="Set speed to $speed"
-    //% speed.min=0 speed.max=1023 speed.defl=50
+    //% speed.min=0 speed.max=1023 speed.defl=256
     export function setSpeedRatio(speed: number): void {
         speed = Math.max(speed, 0)
         speed = Math.min(speed, speedMax)
@@ -130,7 +130,7 @@ namespace runkit {
     //% block="Motor $motors | $direction | at speed $speed"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
-    //% speed.min=0 speed.max=1023 speed.defl=512
+    //% speed.min=0 speed.max=1023 speed.defl=256
     //% advanced=true
     export function motorOn(motors: Motors, direction: Dir, speed: number): void {
         speed = Math.max(speed, 0)
