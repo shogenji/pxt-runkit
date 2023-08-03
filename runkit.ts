@@ -10,13 +10,18 @@ namespace runkit {
     let currentSpeed = 512
  
     export enum Motors {
+        //% blockId="motors_left" block="left"
         Left = 0,
+        //% blockId="motors_right" block="right"
         Right = 1,
+        //% blockId="motors_both" block="both"
         Both = 2
     }
 
     export enum Dir {
+        //% blockId="dir_forward" block="Forward"
         Forward = 0,
+        //% blockId="dir_backward" block="Backward"
         Backward = 1
     }
 
