@@ -1,4 +1,9 @@
 {
+    "runkit.motors_left": "左側",
+    "runkit.motors_right": "右側",
+    "runkit.motors_both": "両方",
+    "runkit.dir_forward": "前進",
+    "runkit.dir_backward": "後退",
     "runkit.moveForward|block": "すすむ",
     "runkit.moveBackward|block": "さがる",
     "runkit.rotateCw|block": "右回転",
@@ -11,6 +16,8 @@
     "runkit.stopFor|block": "止まる（ミリ秒）$duration",
     "runkit.setSpeedRatio|block": "スピードを$speed ％に設定する",
     "runkit.setMaxSpeed|block": "最高スピードを$speed に設定する",
+    "runkit.motorOn|block": "$motorsのモータをスピード$speed で$direction 方向に回転させる",
+    "runkit.motorOff|block": "$motorsのモータを止める",
     "runkit|block": "走らせようキット",
     "{id:category}Run Kit": "走らせようキット",
     "{id:subcategory}Settings": "設定"
