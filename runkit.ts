@@ -217,10 +217,10 @@ namespace runkit {
 
 
     /**
-        Stop motors.
+        Turn of the motors.
     **/
     //% blockId=motor_off
-    //% weight=90
+    //% weight=95
     //% block="Motor $motors stop"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
     //% advanced=true
