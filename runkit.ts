@@ -87,7 +87,7 @@ namespace runkit {
         @param duration time [ms] move forward
     **/
     //% blockId=move_forward_for
-    //% weight=100
+    //% weight=50
     //% block="Move forward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -103,7 +103,7 @@ namespace runkit {
         @param duration time [ms] move forward
     **/
     //% blockId=move_backward_for
-    //% weight=90
+    //% weight=40
     //% block="Move backward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -119,7 +119,7 @@ namespace runkit {
         @param duration time [ms] rotate clockwise
     **/
     //% blockId=rotate_cw_for
-    //% weight=80
+    //% weight=30
     //% block="Rotate clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -136,7 +136,7 @@ namespace runkit {
         @param duration time [ms] rotate counter-clockwise
     **/
     //% blockId=rotate_ccw_for
-    //% weight=70
+    //% weight=20
     //% block="Rotate counter-clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -153,7 +153,7 @@ namespace runkit {
         @param duration time [ms] stop
     **/
     //% blockId=stop_for
-    //% weight=60
+    //% weight=10
     //% block="Stop for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -168,7 +168,7 @@ namespace runkit {
         @param speed
     **/
     //% blockId=set_speed
-    //% weight=30
+    //% weight=0
     //% block="Set speed to $speed"
     //% speed.min=0 speed.max=1023 speed.defl=256
     export function setSpeedRatio(speed: number): void {
