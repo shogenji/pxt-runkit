@@ -41,7 +41,7 @@ namespace runkit {
         Move backward.
     **/
     //% blockId=move_backward
-    //% weight=90
+    //% weight=95
     //% block="Move backward"
     export function moveBackward(): void {
         motorOn(Motors.Both, Dir.Backward, fixedSpeed)
@@ -52,7 +52,7 @@ namespace runkit {
         Rotate clockwise.
     **/
     //% blockId=rotate_cw
-    //% weight=80
+    //% weight=90
     //% block="Rotate clockwise"
     export function rotateCw(): void {
         motorOn(Motors.Left, Dir.Forward, fixedSpeed)
@@ -64,7 +64,7 @@ namespace runkit {
         Rotate counter-clockwise.
     **/
     //% blockId=rotate_ccw
-    //% weight=70
+    //% weight=85
     //% block="Rotate counter-clockwise"
     export function rotateCcw(): void {
         motorOn(Motors.Left, Dir.Backward, fixedSpeed)
@@ -76,7 +76,7 @@ namespace runkit {
         Stop.
     **/
     //% blockId=stop
-    //% weight=60
+    //% weight=80
     //% block="Stop"
     export function stop(): void {
         motorOff(Motors.Both)
@@ -87,7 +87,7 @@ namespace runkit {
         @param duration time [ms] move forward
     **/
     //% blockId=move_forward_for
-    //% weight=50
+    //% weight=75
     //% block="Move forward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -103,7 +103,7 @@ namespace runkit {
         @param duration time [ms] move forward
     **/
     //% blockId=move_backward_for
-    //% weight=40
+    //% weight=70
     //% block="Move backward for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -119,7 +119,7 @@ namespace runkit {
         @param duration time [ms] rotate clockwise
     **/
     //% blockId=rotate_cw_for
-    //% weight=30
+    //% weight=65
     //% block="Rotate clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -136,7 +136,7 @@ namespace runkit {
         @param duration time [ms] rotate counter-clockwise
     **/
     //% blockId=rotate_ccw_for
-    //% weight=20
+    //% weight=60
     //% block="Rotate counter-clockwise for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -153,7 +153,7 @@ namespace runkit {
         @param duration time [ms] stop
     **/
     //% blockId=stop_for
-    //% weight=10
+    //% weight=55
     //% block="Stop for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
@@ -164,14 +164,14 @@ namespace runkit {
 
 
     /**
-        Set speed.
+        Set fixed speed.
         @param speed
     **/
-    //% blockId=set_speed
-    //% weight=0
+    //% blockId=set_fixed_speed
+    //% weight=50
     //% block="Set speed to $speed"
     //% speed.min=0 speed.max=1023 speed.defl=256
-    export function setSpeedRatio(speed: number): void {
+    export function setFixedSpeed(speed: number): void {
         speed = Math.max(speed, 0)
         speed = Math.min(speed, speedMax)
         fixedSpeed = speed
@@ -179,7 +179,7 @@ namespace runkit {
 
 
     /**
-        Set the direction and speed of motors.
+        Turn the motors by specifying the direction of rotation and speed.
     **/
     //% blockId=motor_on
     //% weight=100
