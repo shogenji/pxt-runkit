@@ -164,7 +164,7 @@ namespace runkit {
 
 
     /**
-        Set fixed speed.
+        Set speed.
         @param speed
     **/
     //% blockId=set_fixed_speed
