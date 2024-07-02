@@ -180,10 +180,10 @@ namespace runkit {
     /**
         Turn of the motors.
     **/
-    //% blockId=direction
+    //% blockId=direction_num
     //% weight=110
-    //% block="Motor $motors stop"
-    //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
+    //% block="$direction"
+    //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
     //% advanced=true
     export function directionNum(direction: Dir): number {
         return direction
