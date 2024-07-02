@@ -195,21 +195,18 @@ namespace runkit {
         switch (motors) {
             case Motors.Left:
                 pins.digitalWritePin(DigitalPin.P13, direction)
-                pins.digitalWritePin(DigitalPin.P14, speed)
+                pins.analogWritePin(AnalogPin.P14, speed)
                 break
-
             case Motors.Right:
                 pins.digitalWritePin(DigitalPin.P15, direction)
-                pins.digitalWritePin(DigitalPin.P16, speed)
+                pins.analogWritePin(AnalogPin.P16, speed)
                 break
-
             case Motors.Both:
                 pins.digitalWritePin(DigitalPin.P13, direction)
-                pins.digitalWritePin(DigitalPin.P14, speed)
+                pins.analogWritePin(AnalogPin.P14, speed)
                 pins.digitalWritePin(DigitalPin.P15, direction)
-                pins.digitalWritePin(DigitalPin.P16, speed)
+                pins.analogWritePin(AnalogPin.P16, speed)
                 break
-
             default:
             // Stop - something has gone wrong
         }
@@ -227,14 +224,14 @@ namespace runkit {
     export function motorOff(motors: Motors): void {
         switch (motors) {
             case Motors.Left:
-                pins.digitalWritePin(DigitalPin.P14, 0)
+                pins.analogWritePin(AnalogPin.P14, 0)
                 break
             case Motors.Right:
-                pins.digitalWritePin(DigitalPin.P16, 0)
+                pins.analogWritePin(AnalogPin.P16, 0)
                 break
             case Motors.Both:
-                pins.digitalWritePin(DigitalPin.P14, 0)
-                pins.digitalWritePin(DigitalPin.P16, 0)
+                pins.analogWritePin(AnalogPin.P14, 0)
+                pins.analogWritePin(AnalogPin.P16, 0)
                 break
             default:
             // Stop - something has gone wrong
