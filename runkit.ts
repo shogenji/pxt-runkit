@@ -1,5 +1,5 @@
 /**
- * Extensions for Switch Education's "Run Your micro:bit Kit."
+ * Extensions for switch education's "Run Your micro:bit Kit."
  */
 //% weight=100
 //% color=#ff7700 icon="\uf1b9"
