@@ -177,6 +177,17 @@ namespace runkit {
         fixedSpeed = speed
     }
 
+    /**
+        Turn of the motors.
+    **/
+    //% blockId=direction
+    //% weight=110
+    //% block="Motor $motors stop"
+    //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
+    //% advanced=true
+    export function directionNum(direction: Dir): number {
+        return direction
+    }
 
     /**
         Turn the motors by specifying the direction of rotation and speed.
@@ -237,4 +248,5 @@ namespace runkit {
             // Stop - something has gone wrong
         }
     }
+
 }
