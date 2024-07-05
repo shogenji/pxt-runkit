@@ -186,7 +186,7 @@ namespace runkit {
     //% blockId=show_direction
     //% block="show $direction"
     //% color.shadow="direction_enum_shim"
-    export function showDirection(direction: number) {
+    export function showDirection(direction: Dir) {
 
     }
 
