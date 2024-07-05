@@ -178,19 +178,6 @@ namespace runkit {
     }
 
 
-
-    /**
-     * In a function that uses an enum shadow block, the argument it takes in
-     * should be of type "number" (not the enum type)
-     */
-    //% blockId=show_direction
-    //% block="show $direction"
-    //% color.shadow="direction_enum_shim"
-    export function showDirection(direction: Dir) {
-
-    }
-
-
     /**
         Turn the motors by specifying the direction of rotation and speed.
     **/
