@@ -149,11 +149,77 @@ namespace runkit {
 
 
     /**
+        Move forward at specified speed.
+        @param move forward at specified speed
+    **/
+    //% blockId=move_forward_speed
+    //% weight=45
+    //% block="Move forward at speed $speed"
+    //% speed.min=0 speed.max=1023 speed.defl=256
+    export function moveForwardAt(speed: number): void {
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+
+        motorOn(Motors.Both, Dir.Forward, speed)
+    }
+
+
+    /**
+        Move backward at specified speed.
+        @param move backward at specified speed
+    **/
+    //% blockId=move_backward_speed
+    //% weight=40
+    //% block="Move backward at speed $speed"
+    //% speed.min=0 speed.max=1023 speed.defl=256
+    export function moveBackwardAt(speed: number): void {
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+
+        motorOn(Motors.Both, Dir.Backward, speed)
+    }
+
+
+    /**
+        Rotate clockwise at specified speed.
+        @param rotate clockwise at specified speed
+    **/
+    //% blockId=rotate_cw_speed
+    //% weight=35
+    //% block="Rotate clockwise at speed $speed"
+    //% speed.min=0 speed.max=1023 speed.defl=256
+    export function rotateCwAt(speed: number): void {
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+
+        motorOn(Motors.Left, Dir.Forward, speed)
+        motorOn(Motors.Right, Dir.Backward, speed)
+    }
+
+
+    /**
+        Rotate counter-clockwise at specified speed.
+        @param rotate counter-clockwise at specified speed
+    **/
+    //% blockId=rotate_ccw_speed
+    //% weight=30
+    //% block="Rotate counter-clockwise at speed $speed"
+    //% speed.min=0 speed.max=1023 speed.defl=256
+    export function rotateCcwAt(speed: number): void {
+        speed = Math.max(speed, 0)
+        speed = Math.min(speed, speedMax)
+
+        motorOn(Motors.Left, Dir.Backward, speed)
+        motorOn(Motors.Right, Dir.Forward, speed)
+    }
+
+
+    /**
         Stop for duration [ms].
         @param duration time [ms] stop
     **/
     //% blockId=stop_for
-    //% weight=55
+    //% weight=25
     //% block="Stop for $duration"
     //% duration.min=0 duration.max=1000000 duration.defl=1000
     //% duration.shadow="timePicker"
