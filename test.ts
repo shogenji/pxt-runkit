@@ -1,5 +1,5 @@
 // tests go here; this will not be compiled when this package is used as an extension.
-runkit.setFixedSpeed(256)
+runkit.setSpeed(256)
 
 basic.forever(function () {
     runkit.moveForward()

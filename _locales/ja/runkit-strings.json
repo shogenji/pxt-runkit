@@ -14,7 +14,7 @@
     "runkit.rotateCwFor|block": "右回転 $duration（ミリ秒）",
     "runkit.rotateCcwFor|block": "左回転 $duration（ミリ秒）",
     "runkit.stopFor|block": "止まる $duration（ミリ秒）",
-    "runkit.setFixedSpeed|block": "スピードを設定する $speed",
+    "runkit.setSpeed|block": "スピードを設定する $speed",
     "runkit.moveForwardAt|block": "すすむ|（速さ: $speed）",
     "runkit.moveBackwardAt|block": "さがる|（速さ: $speed）",
     "runkit.rotateCwAt|block": "右回転|（速さ: $speed）",
